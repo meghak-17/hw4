@@ -1,0 +1,17 @@
+<%= form_with(url: authentication_create_path, method: :get) do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.submit "Login" %>
+  </div>
+<% end %>
+
+<p>Don't have an account? <a href="<%= new_user_path %>">Sign up</a></p>
+
+
