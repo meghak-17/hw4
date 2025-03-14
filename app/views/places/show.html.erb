@@ -1,6 +1,9 @@
 <div class="container mt-4">
   <!-- Place Name -->
-  <h1 class="text-center mb-4"><%= @place["name"] %></h1>
+  <h1 class="mb-3"><%= @place["name"] %></h1>
+
+  <!-- New Entry Button (Moved Up & Styled) -->
+  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-lg btn-info text-white mb-4">➕ Add a New Entry</a>
 
   <!-- Entries Section -->
   <h2 class="mb-3">My Entries</h2>
@@ -11,8 +14,8 @@
         <div class="col-md-4 mb-4">
           <div class="card shadow-sm">
             <div class="card-body">
-              <h3 class="card-title fw-bold"><%= entry["title"] %></h3>
-              <h4 class="text-muted"><%= entry["occurred_on"] %></h4>
+              <h2 class="card-title fw-bold"><%= entry["title"] %></h2>
+              <h5 class="text-muted"><%= entry["occurred_on"] %></h5>
               <p class="card-text"><%= entry["description"] %></p>
 
               <% if entry.image.attached? %>
@@ -27,9 +30,8 @@
     <p class="text-muted">No entries yet. Be the first to add one!</p>
   <% end %>
 
-  <!-- New Entry & Back Button -->
+  <!-- Back Button -->
   <div class="mt-4">
-    <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Entry</a>
     <a href="/places" class="btn btn-secondary">Back to All Places</a>
   </div>
 </div>
